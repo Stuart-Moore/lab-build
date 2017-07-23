@@ -15,5 +15,5 @@ before_test:
 
 
 test_script:
-  - ps: .\Tests\appveyor.pester.ps1
-  - ps: .\Tests\appveyor.pester.ps1 -Finalize
+  - ps: .\Tests\appveyor.Tests.ps1
+  - ps: .\Tests\appveyor.Tests.ps1 -Finalize
