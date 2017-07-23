@@ -5,8 +5,8 @@ Describe "Test we have a valid config and Environment" {
     }
     $config = ConvertFrom-JSON -InputObject (Get-Content -Path "c:\github\lab-build\config\EnvironmentConfig.json" -raw) -WarningVariable WarnVar -ErrorVariable ErrorVar    
     Context "Config file should be valid JSON and import cleanly" {
-        ($ErrorVar[0] -eq $null )| Should Be True
-        ($WarnVar[0] -eq $null) | Should Be True    
+        ($ErrorVar[0] -eq $null )| Should Be $True
+        ($WarnVar[0] -eq $null) | Should Be $True    
     }
     Context "Config should contain at least 2 environments" {
         $config.environments.count | Should BeGreaterThan 1
