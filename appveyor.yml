@@ -7,4 +7,8 @@ environment:
 
 before_test:
   - ps: Install-Module -Name Pester -Repository PSGallery -Force | Out-Null
-  - ps: .\Tests\PreBuildEnvironment.Tests.ps1
+  - ps: Install-Module -Name SqlPs -Repository PSGallery -Force | Out-Null
+  - ps: .\Tests\appveyor.pester.ps1
+
+post_test:
+  - ps: .\Tests\appveyor.pester.ps1 -Finalize
