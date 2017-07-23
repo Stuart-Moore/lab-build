@@ -15,5 +15,22 @@ Describe "Pre Build Environment Tests" {
         It "Config Should contain at least 5 databases" {
             $config.databases.count | Should BeGreaterThan 4
         }
+        ForEach ($Environment in $config.environments ){
+            $sqlsvr = New-Object -TypeName  Microsoft.SQLServer.Management.Smo.Server($Environment.InstanceName)
+
+            It "Environment $($Environment.EnvironmentName) should be connectable" {
+                ($sqlsvr.Status -ne $null) | Should Be $True
+            }
+            if ($sqlsvr.Status -ne $null){
+                Foreach ($Database in ($config.databases | Where-Object {$_.Environment -eq $Environment.EnvironmentName })) {
+                    It "$($Database.DatabaseName) Should Not exist on $($Environment.EnvironmentName)"{
+                        ($Database.DatabaseName -in $sqlsvr.Databases.name) | Should be $False
+                    }
+                }
+            }
+            else {
+                Write-Host "Skipping Db checks as instance not available"
+            }
+        }
     }
 }
