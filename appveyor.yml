@@ -1,0 +1,9 @@
+build: false
+
+# Set build info
+environment: 
+  environment: development
+  version: 0.0.$(appveyor_build_number)
+
+before_test:
+  - ps .\Tests\PreBuildEnvironment.Tests.ps1
