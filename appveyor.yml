@@ -8,6 +8,10 @@ environment:
 # Set alternative clone folder
 clone_folder: c:\github\lab-build
 
+services:
+  - mssql2008r2sp2
+  - mssql2016
+  
 before_test:
   - ps: Install-Module -Name Pester -Repository PSGallery -Force | Out-Null
   - ps: Install-Module -Name SqlServer -Repository PSGallery -Force | Out-Null
