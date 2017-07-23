@@ -1,0 +1,1 @@
+Sconfig = ConvertFrom-JSON -InputObject (Get-Content .\config\EnvironmentConfig.json -raw)
