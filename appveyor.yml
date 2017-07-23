@@ -8,7 +8,8 @@ environment:
 before_test:
   - ps: Install-Module -Name Pester -Repository PSGallery -Force | Out-Null
   - ps: Install-Module -Name SqlPs -Repository PSGallery -Force | Out-Null
-  - ps: .\Tests\appveyor.pester.ps1
 
-test_test:
+
+test_script:
+  - ps: .\Tests\appveyor.pester.ps1
   - ps: .\Tests\appveyor.pester.ps1 -Finalize
