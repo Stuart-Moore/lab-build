@@ -4,11 +4,11 @@
     "Environments" : [
         {
             "EnvironmentName" : "sql2016",
-            "InstanceName" : "localhost\\sqlexpress2016"
+            "InstanceName" : "(local)\\sql2016"
         },
         {
             "EnvironmentName" : "sql2008r2",
-            "InstanceName" : "localhost\\sql2008r2sp2"
+            "InstanceName" : "(local)\\sql2008r2sp2"
         }
     ],
     "Databases" : [
