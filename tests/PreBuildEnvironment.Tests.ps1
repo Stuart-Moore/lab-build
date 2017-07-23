@@ -1,7 +1,7 @@
 
 Describe "Test we have a valid config and Environment" {
     Context "EnvironmentConfig.json should exist" {
-        "$PSScriptRoot\..\config\EnvironmentConfig.json" | Should Exist
+        "c:\github\lab-build\config\EnvironmentConfig.json" | Should Exist
     }
     $config = ConvertFrom-JSON -InputObject (Get-Content -Path "c:\github\lab-build\config\EnvironmentConfig.json" -raw) -WarningVariable WarnVar -ErrorVariable ErrorVar    
     Context "Config file should be valid JSON and import cleanly" {
