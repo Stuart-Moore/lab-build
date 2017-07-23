@@ -9,5 +9,11 @@ Describe "Pre Build Environment Tests" {
             ($ErrorVar[0] -eq $null )| Should Be $True
             ($WarnVar[0] -eq $null) | Should Be $True    
         }
+        It "Config should contain at least 2 environments" {
+            $config.environments.count | Should BeGreaterThan 1
+        }
+        It "Config Should contain at least 5 databases" {
+            $config.databases.count | Should BeGreaterThan 4
+        }
     }
 }
