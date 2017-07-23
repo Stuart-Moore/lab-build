@@ -14,5 +14,5 @@ before_test:
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 test_script:
-  - ps: .\Tests\appveyor.ps1 -ModuleBase c:\github\lab-build
+  - ps: .\Tests\appveyor.ps1 
   - ps: .\Tests\appveyor.ps1 -Finalize
