@@ -1,13 +1,16 @@
-build: false
+build: false  
 
 # Set build info
 environment: 
   environment: development
   version: 0.0.$(appveyor_build_number)
 
+# Set alternative clone folder
+clone_folder: c:\github\lab-buil
+
 before_test:
   - ps: Install-Module -Name Pester -Repository PSGallery -Force | Out-Null
-  - ps: Install-Module -Name SqlPs -Repository PSGallery -Force | Out-Null
+  - ps: Install-Module -Name SqlServer -Repository PSGallery -Force | Out-Null
 
 
 test_script:
