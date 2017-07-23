@@ -6,4 +6,5 @@ environment:
   version: 0.0.$(appveyor_build_number)
 
 before_test:
+  - ps: Install-Module -Name Pester -Repository PSGallery -Force | Out-Null
   - ps: .\Tests\PreBuildEnvironment.Tests.ps1
