@@ -11,6 +11,8 @@ clone_folder: c:\github\lab-build
 before_test:
   - ps: Install-Module -Name Pester -Repository PSGallery -Force | Out-Null
   - ps: Install-Module -Name SqlServer -Repository PSGallery -Force | Out-Null
+  - ps: Import-Module Pester
+  - ps: Import-Module SqlServer
 #  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 test_script:
