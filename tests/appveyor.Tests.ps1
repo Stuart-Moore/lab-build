@@ -38,9 +38,6 @@ param (
 
 # Move to the project root
 Set-Location $ModuleBase
-Remove-Module dbatools -ErrorAction Ignore
-Import-Module "$ModuleBase\dbatools.psm1" -DisableNameChecking
-$ScriptAnalyzerRules = Get-ScriptAnalyzerRule
 
 #Run a test with the current version of PowerShell
 #Make things faster by removing most output
