@@ -4,6 +4,7 @@ Describe "Pre Build Environment Tests" {
         It "EnvironmentConfig.json should exist" {
             'c:\github\lab-build\config\EnvironmentConfig.json' | Should Exist
         }
+        $config = ConvertFrom-JSON -InputObject (Get-Content -Path "c:\github\lab-build\config\EnvironmentConfig.json" -raw) -WarningVariable WarnVar -ErrorVariable ErrorVar    
         It "Config file should be valid JSON and import cleanly" {
             ($ErrorVar[0] -eq $null )| Should Be $True
             ($WarnVar[0] -eq $null) | Should Be $True    
