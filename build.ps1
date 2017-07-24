@@ -10,13 +10,15 @@ New-Item C:\github\app-lab\backups\RestoreTimeStripe\ -ItemType Directory
 $span = ($end-$start).minutes
 write-host "took $span minutes"
 
-foreach ($database in $config.databases){
-    $instance = $config.Environments | Where-Object {$_.EnvironmentName -eq $database.environment}
-    If (test-path $database.script ) {
-        write-host "running $($database.script)"
-        Start-RsJob -Name {$database.DatabaseName} -ScriptBlock {
-            Invoke-SqlCmd -ServerInstance $instance.InstanceName -InputFile $database.script -QueryTimeout 0 -Verbose
+$config.databases |
+    Start-RsJob -Name {$_.DatabaseName} -Batch 'dbcreation' -ScriptBlock {
+        $instance = $config.Environments | Where-Object EnvironmentName -eq $_.environment
+        If (test-path $_.script ) {
+            write-host "running $($database.script)"
+            Invoke-SqlCmd -ServerInstance $instance.InstanceName -InputFile $_.script -QueryTimeout 0 -Verbose
         } 
     }   
-}
 
+Get-RsJob -Batch 'dbcreation' | Wait-RsJob | Out-Null
+Get-RsJob -Batch 'dbcreation' | Receive-RsJob
+Get-RsJob -Batch 'dbcreation' | Remove-RsJob
