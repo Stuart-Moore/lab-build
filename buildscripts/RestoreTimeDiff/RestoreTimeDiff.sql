@@ -43,7 +43,7 @@ while (@i<10)
 begin
 insert into steps values (@i, getdate())
 select @i=@i+1
-waitfor delay '00:00:30'
+waitfor delay '00:00:10'
 end
 backup log [RestoreTimeStripe] to 
 disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_1.trn',
@@ -53,7 +53,7 @@ while (@i<20)
 begin
 insert into steps values (@i,getdate())
 select @i=@i+1
-waitfor delay '00:00:30'
+waitfor delay '00:00:10'
 end
 
 
@@ -65,7 +65,7 @@ while (@i<30)
 begin
 insert into steps values (@i,getdate())
 select @i=@i+1
-waitfor delay '00:00:30'
+waitfor delay '00:00:10'
 end
 
 
@@ -81,7 +81,7 @@ while (@i<10)
 begin
 insert into steps values (@i, getdate())
 select @i=@i+1
-waitfor delay '00:00:30'
+waitfor delay '00:00:10'
 end
 backup log [RestoreTimeStripe] to 
 disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_21.trn',
@@ -91,7 +91,7 @@ while (@i<20)
 begin
 insert into steps values (@i,getdate())
 select @i=@i+1
-waitfor delay '00:00:30'
+waitfor delay '00:00:10'
 end
 
 
@@ -103,7 +103,7 @@ while (@i<30)
 begin
 insert into steps values (@i,getdate())
 select @i=@i+1
-waitfor delay '00:00:30'
+waitfor delay '00:00:10'
 end
 
 
