@@ -36,7 +36,7 @@ param (
 	$PSVersion = $PSVersionTable.PSVersion.Major,
 	$TestFile = "TestResultsPS$PSVersion.xml",
 	$ProjectRoot = $ENV:APPVEYOR_BUILD_FOLDER,
-	$ModuleBase = $ProjectRoot
+	$ModuleBase = $ProjectRoot,
 	$Tag
 )
 
