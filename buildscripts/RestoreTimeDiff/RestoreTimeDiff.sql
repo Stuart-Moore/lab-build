@@ -15,8 +15,7 @@ go
 alter database RestoreTimeStripe set recovery full
 go
 
-use restoretime
-go
+use restoretimeStripe
 
 IF EXISTS (SELECT * FROM SYS.tables WHERE name='steps')
 begin
