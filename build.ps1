@@ -13,8 +13,9 @@ write-host "took $span minutes"
 foreach ($database in $config.databases){
     $instance = $config.Environments | Where-Object {$_.EnvironmentName -eq $database.environment}
     If (test-path $database.script ) {
+        write-host "running $($database.script)"
         Start-RsJob -Name {$database.DatabaseName} -ScriptBlock {
-            Invoke-SqlCmd -ServerInstance $instance.InstanceName -InputFile $database.script -QueryTimeout 0
+            Invoke-SqlCmd -ServerInstance $instance.InstanceName -InputFile $database.script -QueryTimeout 0 -Verbose
         } 
     }   
 }
