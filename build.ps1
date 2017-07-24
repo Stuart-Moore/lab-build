@@ -16,7 +16,7 @@ $config.databases |
         $script = "c:\github\lab-build\$($_.script)"
         If (test-path $script ) {
             write-host "running $script"
-            $Sqloutput = Invoke-SqlCmd -ServerInstance $instance.InstanceName -InputFile $script -QueryTimeout 0 -Verbose
+            $Sqloutput = Invoke-SqlCmd -ServerInstance $instance.InstanceName -InputFile $script -QueryTimeout (45*60)
             [PscustomObject]@{ISOut = $sqloutput}
         } 
     }   
