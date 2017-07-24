@@ -17,14 +17,26 @@
             "Environment" : "sql2016",
             "Purpose" : "Test Correct fail mode for restoring backwards on version",
             "Path" : "RestoreSql2016",
-            "Script" : "BuildScripts\\RestoreSql2016.sql"
+            "Script" : "BuildScripts\\RestoreSql2016.sql",
+            "Files" : {
+                "bak" : "1",
+                "trn" : "6",
+                "mdf" : "1",
+                "ldf" : "1"
+            }
         },
         {
             "DatabaseName" : "RestoreTimeClean",
             "Environment" : "sql2008r2",
             "Purpose" : "General Purpose restore candidate",
             "Path" : "RestoreTimeClean",
-            "Script" : "BuildScripts\\RestoreTimeClean\\RestoreTimeClean.sql"
+            "Script" : "BuildScripts\\RestoreTimeClean\\RestoreTimeClean.sql",
+            "Files" : {
+                "bak" : "2",
+                "trn" : "1",
+                "mdf" : "1",
+                "ldf" : "1"
+            }
         },
         {
             "DatabaseName" : "RestoreTimeDiff",
@@ -46,7 +58,13 @@
             "Environment" : "sql2008r2",
             "Purpose" : "Striped Backup",
             "Path" : "RestoreTimeStripe",
-            "Script" : "BuildScripts\\RestoreTimeStripe.sql"
+            "Script" : "BuildScripts\\RestoreTimeStripe.sql",
+            "Files" : {
+                "bak" : "4",
+                "trn" : "12",
+                "mdf" : "1",
+                "ldf" : "1"
+            }
         },
         {
             "DatabaseName" : "RestoreMissingFile",

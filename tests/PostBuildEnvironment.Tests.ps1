@@ -1,5 +1,5 @@
 
-Describe -Tag 'PreBuild' "Pre Build Environment Tests" {
+Describe -Tag 'PostBuild' "Post Build Environment Tests" {
     Context "Test we have a valid config and Environment" {
         It "EnvironmentConfig.json should exist" {
             'c:\github\lab-build\config\EnvironmentConfig.json' | Should Exist
@@ -23,8 +23,14 @@ Describe -Tag 'PreBuild' "Pre Build Environment Tests" {
             }
             if ($sqlsvr.Status -ne $null){
                 Foreach ($Database in ($config.databases | Where-Object {$_.Environment -eq $Environment.EnvironmentName })) {
-                    It "$($Database.DatabaseName) Should Not exist on $($Environment.EnvironmentName)"{
-                        ($Database.DatabaseName -in $sqlsvr.Databases.name) | Should be $False
+                    It "$($Database.DatabaseName) Should exist on $($Environment.EnvironmentName)"{
+                        ($Database.DatabaseName -in $sqlsvr.Databases.name) | Should be $true
+                    }
+                    It "$($Database.DatabaseName) Should have $($Database.files.bak) bak files " {
+                        (Get-ChildItem $Database.BackupPath -File -Filter '*.bak' -recurse).count | Shoule be $Database.files.bak
+                    }
+                    It "$($Database.DatabaseName) Should have $($Database.files.trn) trn files " {
+                        (Get-ChildItem $Database.BackupPath -File -Filter '*.trn' -recurse).count | Shoule be $Database.files.trn
                     }
                 }
             }
