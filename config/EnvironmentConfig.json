@@ -17,21 +17,21 @@
             "Environment" : "sql2016",
             "Purpose" : "Test Correct fail mode for restoring backwards on version",
             "Path" : "RestoreSql2016",
-            "Script" : "sql\\RestoreSql2016.sql"
+            "Script" : "BuildScripts\\RestoreSql2016.sql"
         },
         {
             "DatabaseName" : "RestoreTimeClean",
             "Environment" : "sql2008r2",
             "Purpose" : "General Purpose restore candidate",
             "Path" : "RestoreTimeClean",
-            "Script" : "sql\\RestoreTimeClean.sql"
+            "Script" : "BuildScripts\\RestoreTimeClean.sql"
         },
         {
             "DatabaseName" : "RestoreTimeDiff",
             "Environment" : "sql2008r2",            
             "Purpose" : "General Purpose restore candidate with Diffs",
             "Path" : "RestoreTimeDiff.sql",
-            "Script" : "sql\\RestoreTimeDiff.sql"
+            "Script" : "BuildScripts\\RestoreTimeDiff.sql"
 
         },
         {
@@ -39,14 +39,14 @@
             "Environment" : "sql2008r2",
             "Purpose" : "General Purpose restore candidate with multiple datafiles",
             "Path" : "RestoreTimeMultiFiles",
-            "Script" : "sql\\RestoreTimeMultiFiles.sql"
+            "Script" : "BuildScripts\\RestoreTimeMultiFiles.sql"
         },
         {
             "DatabaseName" : "RestoreTimeStripe",
             "Environment" : "sql2008r2",
             "Purpose" : "Striped Backup",
             "Path" : "RestoreTimeStripe",
-            "Script" : "sql\\RestoreTimeStripe.sql"
+            "Script" : "BuildScripts\\RestoreTimeStripe.sql"
         },
         {
             "DatabaseName" : "RestoreMissingFile",
