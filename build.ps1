@@ -1,4 +1,4 @@
-Sconfig = ConvertFrom-JSON -InputObject (Get-Content c:\github\lab-build\config\EnvironmentConfig.json -raw)
+$config = ConvertFrom-JSON -InputObject (Get-Content c:\github\lab-build\config\EnvironmentConfig.json -raw)
 New-Item C:\github\app-lab\backups\RestoreTimeClean\ -ItemType Directory
 #restoretimeClean
 $instance = $config.EnvironmentConfig | Where-Object {$_.EnvironmentName -eq $config.databases}
