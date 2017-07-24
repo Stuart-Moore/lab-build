@@ -15,7 +15,7 @@ before_test:
   - ps: Set-Service -Name 'SQLAgent$sql2016' -StartupType Automatic
   - ps: Install-Module -Name Pester -Repository PSGallery -Force | Out-Null
   - ps: Install-Module -Name SqlServer -Repository PSGallery -Force | Out-Null
-  - ps: Install-Module -Name PoshRSJob -Repository PSGaller -Force | Out-Null
+  - ps: Install-Module -Name PoshRSJob -Repository PSGallery -Force | Out-Null
   - ps: Import-Module Pester
   - ps: Import-Module SqlServer
   - ps: Import-Module PoshRSJob
