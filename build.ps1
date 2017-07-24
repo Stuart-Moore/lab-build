@@ -13,9 +13,11 @@ write-host "took $span minutes"
 $config.databases |
     Start-RsJob -Name {$_.DatabaseName} -Batch 'dbcreation' -ScriptBlock {
         $instance = $config.Environments | Where-Object EnvironmentName -eq $_.environment
-        If (test-path $_.script ) {
-            write-host "running $($database.script)"
-            Invoke-SqlCmd -ServerInstance $instance.InstanceName -InputFile $_.script -QueryTimeout 0 -Verbose
+        $script = "c:\github\lab-build\$($_.script)"
+        If (test-path $script ) {
+            write-host "running $script"
+            $Sqloutput = Invoke-SqlCmd -ServerInstance $instance.InstanceName -InputFile $script -QueryTimeout 0 -Verbose
+            [PscustomObject]@{ISOut = $sqloutput}
         } 
     }   
 
