@@ -24,14 +24,14 @@
             "Environment" : "sql2008r2",
             "Purpose" : "General Purpose restore candidate",
             "Path" : "RestoreTimeClean",
-            "Script" : "BuildScripts\\RestoreTimeClean.sql"
+            "Script" : "BuildScripts\\RestoreTimeClean\\RestoreTimeClean.sql"
         },
         {
             "DatabaseName" : "RestoreTimeDiff",
             "Environment" : "sql2008r2",            
             "Purpose" : "General Purpose restore candidate with Diffs",
             "Path" : "RestoreTimeDiff.sql",
-            "Script" : "BuildScripts\\RestoreTimeDiff.sql"
+            "Script" : "BuildScripts\\RestoreTimeDiff\\RestoreTimeDiff.sql"
 
         },
         {
