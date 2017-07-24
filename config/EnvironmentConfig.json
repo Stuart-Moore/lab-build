@@ -1,32 +1,32 @@
 {
     "TargetRootFolder" : "c:\\github\\appveyor-lab",
     "MinPesterVersion" : 4,
-    "Environments" : [
-        {
+    "Environments" : {
+        "sql2016": {
             "EnvironmentName" : "sql2016",
             "InstanceName" : "(local)\\sql2016"
         },
-        {
+       "sql2008r2": {
             "EnvironmentName" : "sql2008r2",
             "InstanceName" : "(local)\\sql2008r2sp2"
         }
-    ],
-    "Databases" : [
-        {
+    },
+    "Databases" : {
+        "RestoreSql2016" : {
             "DatabaseName" : "RestoreSql2016",
             "Environment" : "sql2016",
             "Purpose" : "Test Correct fail mode for restoring backwards on version",
             "Path" : "RestoreSql2016",
             "Script" : "sql\\RestoreSql2016.sql"
         },
-        {
+        "RestoreTimeClean" : {
             "DatabaseName" : "RestoreTimeClean",
             "Environment" : "sql2008r2",
             "Purpose" : "General Purpose restore candidate",
             "Path" : "RestoreTimeClean",
             "Script" : "sql\\RestoreTimeClean.sql"
         },
-        {
+        "RestoreTimeDiff" : {
             "DatabaseName" : "RestoreTimeDiff",
             "Environment" : "sql2008r2",            
             "Purpose" : "General Purpose restore candidate with Diffs",
@@ -34,26 +34,26 @@
             "Script" : "sql\\RestoreTimeDiff.sql"
 
         },
-        {
+        "RestoreTimeMultiFiles" : {
             "DatabaseName" : "RestoreTimeMultiFiles",
             "Environment" : "sql2008r2",
             "Purpose" : "General Purpose restore candidate with multiple datafiles",
             "Path" : "RestoreTimeMultiFiles",
             "Script" : "sql\\RestoreTimeMultiFiles.sql"
         },
-        {
+        "RestoreTimeStripe" : {
             "DatabaseName" : "RestoreTimeStripe",
             "Environment" : "sql2008r2",
             "Purpose" : "Striped Backup",
             "Path" : "RestoreTimeStripe",
             "Script" : "sql\\RestoreTimeStripe.sql"
         },
-        {
+        "RestoreMissingFile" : {
             "DatabaseName" : "RestoreMissingFile",
             "Environment" : "sql2008r2",
             "Purpose" :"Check things catch a missing translog, remove it with PS",
             "Path" : "RestoreMissingFile",
             "Script" : "buildscripts\\RestoreMissingFile.ps1"
         }
-    ]
+    }
 }
