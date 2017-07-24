@@ -37,7 +37,7 @@ set @i=0
 
 backup database [RestoreTimeStripe] to 
 disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime.bak',
-disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime1.bak'
+disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime1.bak';
 
 while (@i<10)
 begin
@@ -47,7 +47,7 @@ waitfor delay '00:00:30'
 end
 backup log [RestoreTimeStripe] to 
 disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_1.trn',
-disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_1a.trn'
+disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_1a.trn';
 
 while (@i<20)
 begin
@@ -59,7 +59,7 @@ end
 
 backup log [RestoreTimeStripe] to 
 disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_2.trn',
-disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_2a.trn'
+disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_2a.trn';
 
 while (@i<30)
 begin
@@ -71,11 +71,11 @@ end
 
 backup log [RestoreTimeStripe] to 
 disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_3.trn',
-disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_3a.trn'
+disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_3a.trn';
 
 backup database [RestoreTimeStripe] to 
 disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime2.bak',
-disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime2a.bak'
+disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime2a.bak';
 
 while (@i<10)
 begin
@@ -85,7 +85,7 @@ waitfor delay '00:00:30'
 end
 backup log [RestoreTimeStripe] to 
 disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_21.trn',
-disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_21a.trn'
+disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_21a.trn';
 
 while (@i<20)
 begin
@@ -97,7 +97,7 @@ end
 
 backup log [RestoreTimeStripe] to 
 disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_22.trn',
-disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_22a.trn'
+disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_22a.trn';
 
 while (@i<30)
 begin
@@ -109,5 +109,5 @@ end
 
 backup log [RestoreTimeStripe] to 
 disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_23.trn',
-disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_23a.trn'
+disk='C:\github\app-lab\backups\RestoreTimeStripe\restoretime_23a.trn';
 
