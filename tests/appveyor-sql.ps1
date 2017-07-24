@@ -1,6 +1,5 @@
 Write-Host -Object "Running $PSCommandpath" -ForegroundColor Cyan
 # Imports some assemblies
-Write-Output "Importing dbatools"
 
 # This script spins up two local instances
 $sql2008 = "localhost\sql2008r2sp2"

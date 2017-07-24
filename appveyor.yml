@@ -23,3 +23,4 @@ before_test:
 test_script:
   - ps: .\Tests\appveyor.ps1 
   - ps: .\Tests\appveyor.ps1 -Finalize
+  - ps: .\build.ps1
