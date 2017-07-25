@@ -34,10 +34,10 @@ Finalizes the tests
 param (
 	[switch]$Finalize,
 	$PSVersion = $PSVersionTable.PSVersion.Major,
-	$TestFile = "TestResultsPS$PSVersion.xml",
+	$Tag,
+	$TestFile = "TestResultsPS$Tag$PSVersion.xml",
 	$ProjectRoot = $ENV:APPVEYOR_BUILD_FOLDER,
-	$ModuleBase = $ProjectRoot,
-	$Tag
+	$ModuleBase = $ProjectRoot
 )
 
 # Move to the project root

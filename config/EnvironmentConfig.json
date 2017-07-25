@@ -31,6 +31,7 @@
             "Purpose" : "General Purpose restore candidate",
             "Path" : "RestoreTimeClean",
             "Script" : "BuildScripts\\RestoreTimeClean\\RestoreTimeClean.sql",
+            "BackupPath" : "C:\\github\\app-lab\\backups\\RestoreTimeClean\\",
             "Files" : {
                 "bak" : "2",
                 "trn" : "1",
@@ -59,6 +60,7 @@
             "Purpose" : "Striped Backup",
             "Path" : "RestoreTimeStripe",
             "Script" : "BuildScripts\\RestoreTimeStripe.sql",
+            "BackupPath" : "C:\\github\\app-lab\\backups\\RestoreTimeStripe\\",
             "Files" : {
                 "bak" : "4",
                 "trn" : "12",
@@ -67,11 +69,17 @@
             }
         },
         {
-            "DatabaseName" : "RestoreMissingFile",
+            "DatabaseName" : "SingleRestore",
             "Environment" : "sql2008r2",
-            "Purpose" :"Check things catch a missing translog, remove it with PS",
-            "Path" : "RestoreMissingFile",
-            "Script" : "buildscripts\\RestoreMissingFile.ps1"
+            "Purpose" :"Basic Single Backup with a simple DB",
+            "Path" : "SingleRestore",
+            "Script" : "buildscripts\\SingleRestore.sql",
+            "Files" : {
+                "bak" : "1",
+                "trn" : "0",
+                "mdf" : "1",
+                "ldf" : "1"
+            }
         }
     ]
 }
