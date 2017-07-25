@@ -17,7 +17,7 @@ $config.databases |
         If (test-path $script ) {
             write-host "running $script"
             $Sqloutput = Invoke-SqlCmd -ServerInstance $instance.InstanceName -InputFile $script -QueryTimeout (45*60)
-            [PscustomObject]@{ISOut = $sqloutput}
+            #[PscustomObject]@{ISOut = $sqloutput}
         } 
     }   
 

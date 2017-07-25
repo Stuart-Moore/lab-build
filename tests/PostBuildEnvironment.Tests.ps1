@@ -27,10 +27,10 @@ Describe -Tag 'PostBuild' "Post Build Environment Tests" {
                         ($Database.DatabaseName -in $sqlsvr.Databases.name) | Should be $true
                     }
                     It "$($Database.DatabaseName) Should have $($Database.files.bak) bak files " {
-                        (Get-ChildItem $Database.BackupPath -File -Filter '*.bak' -recurse).count | Shoule be $Database.files.bak
+                        (Get-ChildItem $Database.BackupPath -File -Filter '*.bak' -recurse).count | Should be $Database.files.bak
                     }
                     It "$($Database.DatabaseName) Should have $($Database.files.trn) trn files " {
-                        (Get-ChildItem $Database.BackupPath -File -Filter '*.trn' -recurse).count | Shoule be $Database.files.trn
+                        (Get-ChildItem $Database.BackupPath -File -Filter '*.trn' -recurse).count | Should be $Database.files.trn
                     }
                 }
             }
