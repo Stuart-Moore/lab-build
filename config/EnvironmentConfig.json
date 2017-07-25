@@ -52,7 +52,13 @@
             "Environment" : "sql2008r2",
             "Purpose" : "General Purpose restore candidate with multiple datafiles",
             "Path" : "RestoreTimeMultiFiles",
-            "Script" : "BuildScripts\\RestoreTimeMultiFiles.sql"
+            "Script" : "BuildScripts\\RestoreTimeMultiFiles.sql",
+            "Files" : {
+                "bak" : "1",
+                "trn" : "6",
+                "mdf" : "2",
+                "ldf" : "1"
+            }
         },
         {
             "DatabaseName" : "RestoreTimeStripe",
